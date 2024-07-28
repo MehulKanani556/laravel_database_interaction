@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\HttpController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -12,4 +14,9 @@ Route::get('users',[UserController::class,'users']);
 
 
 // model
-ROute::get('student',[StudentController::class,'getStudent']);
+Route::get('student',[StudentController::class,'getStudent']);
+
+
+// http client
+
+Route::get('data',[HttpController::class,'getData']);
