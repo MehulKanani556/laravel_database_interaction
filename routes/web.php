@@ -7,6 +7,7 @@ use App\Http\Controllers\HttpController;
 use App\Http\Controllers\QueryBuilderController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\HttpReqClassController;
+use App\Http\Controllers\SessionController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -47,6 +48,14 @@ Route::view('form','ruteview');
 
 
 // Http request class
-Route::post('login',[HttpReqClassController::class,'login']);
+Route::post('reqclass',[HttpReqClassController::class,'login']);
 
 Route::view('reqclass','httpreqclass');
+
+
+// Session
+
+Route::view('session','sessionview');
+Route::view('sessionprofile','sessionprofile');
+Route::post('session',[SessionController::class,'login']);
+Route::get('sessionlogout',[SessionController::class,'logout']);

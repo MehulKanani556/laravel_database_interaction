@@ -42,7 +42,7 @@ class HttpReqClassController extends Controller
         echo "<br>";
         echo "<br>";
 
-        if($req -> is('login')){
+        if($req -> is('reqclass')){
             echo "Request code for login path";
         }
         else{
