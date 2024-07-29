@@ -6,6 +6,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\HttpController;
 use App\Http\Controllers\QueryBuilderController;
 use App\Http\Controllers\RouteController;
+use App\Http\Controllers\HttpReqClassController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,16 +31,22 @@ Route::get('query',[QueryBuilderController::class,'queries']);
 
 // route
 
-// Route::get('getroute',[RouteController::class,'get']);
-// Route::post('getroute',[RouteController::class,'post']);
-// Route::put('getroute',[RouteController::class,'put']);
-// Route::delete('getroute',[RouteController::class,'delete']);
-// Route::patch('getroute',[RouteController::class,'patch']);
+Route::get('getroute',[RouteController::class,'get']);
+Route::post('getroute',[RouteController::class,'post']);
+Route::put('getroute',[RouteController::class,'put']);
+Route::delete('getroute',[RouteController::class,'delete']);
+Route::patch('getroute',[RouteController::class,'patch']);
 
-// // call all method in one method
-// Route::any('getroute',[RouteController::class,'any']);
+ // call all method in one method
+ Route::any('getroute',[RouteController::class,'any']);
 
 Route::match(['post','get'],'getroute',[RouteController::class,'group1']);
 Route::match(['put','delete'],'getroute',[RouteController::class,'group2']);
 
 Route::view('form','ruteview');
+
+
+// Http request class
+Route::post('login',[HttpReqClassController::class,'login']);
+
+Route::view('reqclass','httpreqclass');
