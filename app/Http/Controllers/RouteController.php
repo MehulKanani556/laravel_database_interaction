@@ -23,4 +23,13 @@ class RouteController extends Controller
     function patch(){
         return "patch function";
     }
+    function any(){
+        return "any function";
+    }
+    function group1(){
+        return "group1 function";
+    }
+    function group2(){
+        return "group2 function";
+    }
 }

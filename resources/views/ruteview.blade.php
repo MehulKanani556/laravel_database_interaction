@@ -2,8 +2,8 @@
     <h1>User Form</h1>
     <form action="/getroute" method="post">
         {{-- <input type="hidden" name="_method" value="delete"> --}}
-        {{-- <input type="hidden" name="_method" value="PUT"> --}}
-        <input type="hidden" name="_method" value="patch">
+        <input type="hidden" name="_method" value="PUT">
+        {{-- <input type="hidden" name="_method" value="patch"> --}}
         @csrf
         <input type="text" name="user " placeholder="Enter Name">
         <br><br>
