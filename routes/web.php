@@ -8,6 +8,7 @@ use App\Http\Controllers\QueryBuilderController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\HttpReqClassController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\UploadController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -59,3 +60,10 @@ Route::view('session','sessionview');
 Route::view('sessionprofile','sessionprofile');
 Route::post('session',[SessionController::class,'login']);
 Route::get('sessionlogout',[SessionController::class,'logout']);
+
+
+
+// file upload
+
+Route::view('upload','uploadFile');
+Route::post('upload',[UploadController::class,'upload']);
