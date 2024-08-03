@@ -67,3 +67,9 @@ Route::get('sessionlogout',[SessionController::class,'logout']);
 
 Route::view('upload','uploadFile');
 Route::post('upload',[UploadController::class,'upload']);
+
+
+
+// localization
+
+Route::view('localization','localization');
